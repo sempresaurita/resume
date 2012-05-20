@@ -1,0 +1,11 @@
+<h1>All resumes</h1>
+<ul>
+	<% @resumes.each do |resume| %>
+		<li>
+			<%= resume.personal_detail.firstname %>
+			<%= resume.personal_detail.lastname %>
+			<%= resume.personal_detail.address %>
+			<%= resume.personal_detail.telephone %>
+		</li>
+	<% end %>
+</ul>
