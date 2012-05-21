@@ -7,5 +7,16 @@
 			<%= resume.personal_detail.address %>
 			<%= resume.personal_detail.telephone %>
 		</li>
+		<% resume.educations.each do |education| %>
+		<li>
+			<%= education.school_name %>
+			<%= education.city %>
+			<%= education.country %>
+			<%= education.dates_attended %>
+			<%= education.degree %>
+			<%= education.type_of_study %>
+			<%= education.field_of_study %>
+		</li>
+		<% end %>
 	<% end %>
 </ul>

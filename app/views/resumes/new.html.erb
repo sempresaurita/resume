@@ -4,60 +4,10 @@
   
 
   <%= f.fields_for :personal_detail do |personal_detail_fields| %>
-  <ul>
-    <li>
-      <%= personal_detail_fields.label :firstname, 'Name' %>:
-      <%= personal_detail_fields.text_field :firstname %>   
-    </li>
-    <li>
-      <%= personal_detail_fields.label :lastname, 'Last Name' %>:
-      <%= personal_detail_fields.text_field :lastname %>
-    </li>
-    <li>
-      <%= personal_detail_fields.label :address, 'Address' %>
-      <%= personal_detail_fields.text_field :address %>
-    </li>
-    <li>
-      <%= personal_detail_fields.label :country, 'Country' %>
-      <%= personal_detail_fields.text_field :country %>
-    </li>
-    <li>
-      <%= personal_detail_fields.label :telephone, 'Telephone' %>
-      <%= personal_detail_fields.text_field :telephone %>
-    </li>
-  </ul>
+    <%= render "resumes/form_partials/personal_details", :f => personal_detail_fields %>
   <% end %>
-    <%= f.fields_for :education do |education_fields| %>
-  <ul>
-    <li>
-      <%= education_fields.label :school_name, 'School name' %>:
-      <%= education_fields.text_field :school_name %>   
-    </li>
-    <li>
-      <%= education_fields.label :city, 'City' %>:
-      <%= education_fields.text_field :city %>   
-    </li>
-    <li>
-      <%= education_fields.label :country, 'Country' %>:
-      <%= education_fields.text_field :country %>   
-    </li>
-    <li>
-      <%= education_fields.label :dates_attended, 'Datas attended' %>:
-      <%= education_fields.text_field :dates_attended %>
-    </li>
-    <li>
-      <%= education_fields.label :degree, 'Degree' %>
-      <%= education_fields.text_field :degree %>
-    </li>
-    <li>
-      <%= education_fields.label :type_of_study, 'Type of study' %>
-      <%= education_fields.text_field :type_of_study %>
-    </li>
-    <li>
-      <%= education_fields.label :field_of_study, 'Field of study' %>
-      <%= education_fields.text_field :field_of_study %>
-    </li>
-  </ul>
+  <%= f.fields_for :educations do |education_fields| %>
+    <%= render "resumes/form_partials/education", :f => education_fields %>
   <% end %>
   <%= f.submit %>
 <% end %>
